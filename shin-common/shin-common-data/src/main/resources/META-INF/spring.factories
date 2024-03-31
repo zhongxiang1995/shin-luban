@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.shin.common.data.cache.RedisTemplateConfig,\
+    com.shin.common.data.mybatis.MybatisPlusConfig

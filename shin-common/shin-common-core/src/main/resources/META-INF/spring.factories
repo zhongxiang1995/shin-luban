@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.shin.common.core.config.MessageSourceConfig,\
+   com.shin.common.core.config.JacksonConfig
