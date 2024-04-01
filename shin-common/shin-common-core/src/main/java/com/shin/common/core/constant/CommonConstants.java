@@ -21,4 +21,10 @@ public interface CommonConstants {
     String CONFIG_DATA_ID_DYNAMIC_ROUTES = "dynamic_routes";
     String CONFIG_GROUP = "DEFAULT_GROUP";
     long CONFIG_TIMEOUT_MS = 5000;
+
+    String HEADER_ACCESS_TOKEN = "Access-Token";
+    /**
+     * 编码
+     */
+    String UTF8 = "UTF-8";
 }

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.shin.common.core.util.Result;
+import com.shin.common.security.annotation.ApiLogin;
 import com.shin.uaa.admin.service.ProductService;
 import com.shin.uaa.common.entity.Product;
 import lombok.AllArgsConstructor;
@@ -22,11 +23,13 @@ public class ProductController {
     private final ProductService productService;
 
     @GetMapping("/page")
+    @ApiLogin(permission = "product:page")
     public Result page(Page page, Product product){
         return Result.ok(productService.page(page, Wrappers.query(product)));
     }
 
     @PostMapping
+    @ApiLogin(permission = "product:add")
     public Result save(@RequestBody Product product){
         try {
             productService.save(product);
@@ -37,6 +40,7 @@ public class ProductController {
     }
 
     @PutMapping
+    @ApiLogin(permission = "product:edit")
     public Result updateById(@RequestBody Product product){
         try {
             productService.updateById(product);
@@ -47,6 +51,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
+    @ApiLogin(permission = "product:del")
     public Result removeById(@PathVariable String id){
         return Result.ok(productService.removeById(id));
     }
